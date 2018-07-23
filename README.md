@@ -7,8 +7,8 @@ Aha算法、Leetcode网址算法存档
 ## Leetcode
 Leetcode刷题记录，网址：https://leetcode.com/problemset/all/
 
-##NYoj
+## NYoj
 南阳理工学院oj平台刷题记录，网址：http://acm.nyist.edu.cn/JudgeOnline/problemset.php
 
-##PKUoj
+## PKUoj
 北京大学oj平台刷题记录，网址：http://poj.org/

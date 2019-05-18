@@ -3,7 +3,7 @@
 # @Author  : lina
 # @Time    : 2019-03-16 15:51
 
-def ipToInteger(content):
+def ip_to_integer(content):
     """
     将IP转换为整数
     :param content:
@@ -17,7 +17,7 @@ def ipToInteger(content):
         erjinzhi_all += erjinzhi
     return int(erjinzhi_all, 2)   # 二进制转十进制
 
-def integerToIP(content):
+def integer_to_ip(content):
     """
     将整数转化为IP
     :param content:
@@ -38,9 +38,9 @@ if __name__ == '__main__':
         try:
             content = input()
             if '.' in content:
-                res = ipToInteger(content)
+                res = ip_to_integer(content)
             else:
-                res = integerToIP(content)
+                res = integer_to_ip(content)
             print(res)
         except:
             break

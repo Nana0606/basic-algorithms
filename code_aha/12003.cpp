@@ -12,7 +12,7 @@ void swap(milk &p1, milk &p2){
 	p2 = temp;
 }
 
-milk* quick_sort(milk *p, int left, int right){
+milk* quickSort(milk *p, int left, int right){
 	int i = left, j = right;
 	milk temp = p[left];
 	if (i > j){
@@ -29,8 +29,8 @@ milk* quick_sort(milk *p, int left, int right){
 	}
 	p[left] = p[i];
 	p[i] = temp;
-	quick_sort(p, left, i - 1);
-	quick_sort(p, i + 1, right);
+	quickSort(p, left, i - 1);
+	quickSort(p, i + 1, right);
 	return p;
 }
 
@@ -42,7 +42,7 @@ int main(){
 	for (int i = 0; i < M; i++){
 		cin >> p[i].pi >> p[i].ai;
 	}
-	p = quick_sort(p, 0, M - 1);
+	p = quickSort(p, 0, M - 1);
 	int total_money = 0;
 	for (int index = 0; index < M; index++){
 		if (N >= p[index].ai){    //说明index的奶农的奶全部都要

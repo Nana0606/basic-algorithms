@@ -8,7 +8,7 @@ struct number{
 	int count; //数字出现的个数
 };
 
-number* quick_sort(number p[], int left, int right){
+number* quickSort(number p[], int left, int right){
 	int i = left, j = right;
 	number temp = p[left];
 	if (i > j){
@@ -27,8 +27,8 @@ number* quick_sort(number p[], int left, int right){
 	}//end while, i==j
 	p[left] = p[i];
 	p[i] = temp;
-	quick_sort(p, left, i - 1);
-	quick_sort(p, i + 1, right);
+	quickSort(p, left, i - 1);
+	quickSort(p, i + 1, right);
 	return p;
 }
 
@@ -57,7 +57,7 @@ int main(){
 			current_index += 1;
 		}
 	} // end for 出现次数统计完毕
-	p = quick_sort(p, 0, current_index - 1);
+	p = quickSort(p, 0, current_index - 1);
 	for (int i = 0; i <= current_index-1; i++){
 		cout << p[i].num << " " << p[i].count << endl;
 	}

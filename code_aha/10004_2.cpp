@@ -7,9 +7,9 @@ void swap(int &a, int & b){
 	b = temp;
 }
 
-int* quick_sort(int p[], int left, int right){
+int* quickSort(int p[], int left, int right){
 	int i = left, j = right;
-	int temp = p[left];    //ÊàÅ¦
+	int temp = p[left];    //æ¢çº½
 	if (i > j)
 		return p;
 	while (i < j){
@@ -18,33 +18,33 @@ int* quick_sort(int p[], int left, int right){
 		while ((p[i] <= temp) && (i < j))
 			i++;
 		if (i < j){
-			swap(p[i], p[j]);   //²»ĞèÒª½«iºÍjµÄÎ»ÖÃÒÆ¶¯µÄÔ­ÒòÊÇ£¬ÔÚp[i]ºÍp[j]½»»»Î»ÖÃÖ®ºó£¬ÒÑ¾­²»Âú×ãwhileÌõ¼ş£¬ËùÒÔj--ºÍi++¿Ï¶¨»áÖ´ĞĞ£¬³ı·Çi ==jÁË
+			swap(p[i], p[j]);   //ä¸éœ€è¦å°†iå’Œjçš„ä½ç½®ç§»åŠ¨çš„åŸå› æ˜¯ï¼Œåœ¨p[i]å’Œp[j]äº¤æ¢ä½ç½®ä¹‹åï¼Œå·²ç»ä¸æ»¡è¶³whileæ¡ä»¶ï¼Œæ‰€ä»¥j--å’Œi++è‚¯å®šä¼šæ‰§è¡Œï¼Œé™¤éi ==jäº†
 		}
 	} //end while ,i==j
-	//ÊàÅ¦ºÍi==j¶ÔÓ¦µÄÖµ½»»»
+	//æ¢çº½å’Œi==jå¯¹åº”çš„å€¼äº¤æ¢
 	p[left] = p[i];
 	p[i] = temp;
-	quick_sort(p, left, i - 1);
-	quick_sort(p, j + 1, right);
+	quickSort(p, left, i - 1);
+	quickSort(p, j + 1, right);
 	return p;
 }
 
 
 /*
-Ë¼Â·ÊÇ£ºÏÈÅÅĞò£¬ÔÙÔÚÅÅĞòµÄÔªËØÖĞÈ¥ÖØ£¬¼´Èç¹ûµ±Ç°ÔªËØºÍÇ°ÃæµÄÔªËØÏàÍ¬£¬Ôò²»Êä³ö
+æ€è·¯æ˜¯ï¼šå…ˆæ’åºï¼Œå†åœ¨æ’åºçš„å…ƒç´ ä¸­å»é‡ï¼Œå³å¦‚æœå½“å‰å…ƒç´ å’Œå‰é¢çš„å…ƒç´ ç›¸åŒï¼Œåˆ™ä¸è¾“å‡º
 */
 
 int main(){
-	int N; //N±íÊ¾ÊäÈëÊı¾İµÄ¸öÊı
+	int N; //Nè¡¨ç¤ºè¾“å…¥æ•°æ®çš„ä¸ªæ•°
 	cin >> N;
 	int *p = new int[N];
 	for (int i = 0; i < N; i++){
 		cin >> p[i];
 	}
-	p = quick_sort(p, 0, N - 1);
-	int count = 1;  //µÚÒ»¸öÊı×Ö¿Ï¶¨²»ÖØ¸´
+	p = quickSort(p, 0, N - 1);
+	int count = 1;  //ç¬¬ä¸€ä¸ªæ•°å­—è‚¯å®šä¸é‡å¤
 	for (int i = 0; i < N - 1; i++){
-		if (p[i] != p[i + 1])  count++;   //µ±Ç°ÔªËØºÍÖ®Ç°Ò»¸öÔªËØ²»ÏàÍ¬
+		if (p[i] != p[i + 1])  count++;   //å½“å‰å…ƒç´ å’Œä¹‹å‰ä¸€ä¸ªå…ƒç´ ä¸ç›¸åŒ
 	}
 	cout << count << endl;
 	cout << p[0] << " ";

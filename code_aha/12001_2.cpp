@@ -1,7 +1,7 @@
 # include <iostream>
 using namespace std;
 
-int* quick_sort(int p[], int left, int right){
+int* quickSort(int p[], int left, int right){
 	int i = left, j = right;
 	int temp = p[left];  //最左边的元素，当做一个枢纽点
 	if (i > j)
@@ -18,8 +18,8 @@ int* quick_sort(int p[], int left, int right){
 	//下面将i=j时的元素值和枢纽值交换
 	p[left] = p[i];
 	p[i] = temp;
-	quick_sort(p, left, i - 1);
-	quick_sort(p, j + 1, right);
+	quickSort(p, left, i - 1);
+	quickSort(p, j + 1, right);
 	return p;
 }
 
@@ -31,7 +31,7 @@ int main(){
 		cin >> p[i];
 	}
 	int count = 1;    //第一个数字一定是不重复的。
-	p = quick_sort(p, 0, n - 1);
+	p = quickSort(p, 0, n - 1);
 	for (int i = 0; i < n-1; i++){
 		if (p[i] != p[i + 1]){     //说明当前值和前一个数据不重复
 			count++;    //统计不重复的数目

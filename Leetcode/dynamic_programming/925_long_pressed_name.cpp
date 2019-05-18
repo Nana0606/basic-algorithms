@@ -35,7 +35,7 @@ bool isLongPressedName(string name, string typed){
 */
 
 //方法二：AC，主要思路是使用数组依次记录出现的值，及出现次数，（注意要有序），最后比较数据的大小
-vector<pair<char, int> > count_num(string s){
+vector<pair<char, int> > countNum(string s){
 	vector<pair<char, int> > res;
 	pair<char, int> name_pair;
 	char temp_char = s[0];
@@ -57,8 +57,8 @@ vector<pair<char, int> > count_num(string s){
 bool isLongPressedName(string name, string typed){
 	vector<pair<char, int> > name_vec;
 	vector<pair<char, int> > typed_vec;
-	name_vec = count_num(name);
-	typed_vec = count_num(typed);
+	name_vec = countNum(name);
+	typed_vec = countNum(typed);
 	if (int(name_vec.size()) != int(typed_vec.size())){
 		return false;
 	}
